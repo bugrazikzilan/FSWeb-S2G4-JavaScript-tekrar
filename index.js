@@ -41,6 +41,7 @@ function KareninAlani(kenaruzunlugu) {
 }
 
 /* (Oto test yok) Yukarıdaki KareninAlani fonksiyonunu kenar uzunluğu = 10 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
+console.log(KareninAlani(10));
 
 /* GÖREV 1:  
 - CemberinCevresi fonksiyonunu kullanarak aşağıdaki yönergeleri uygulayın:
@@ -50,11 +51,13 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(yariCap) {
+return 2 * pi * yariCap;
 }
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
+console.log(CemberinCevresi(5));
+
 
 /* 	GÖREV 2:  
 - CemberinAlani fonksiyonunu kullanarak aşağıdaki yönergeleri uygulayın:
@@ -64,11 +67,12 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yariCap, pi) {
+  return pi * Math.pow(yariCap,2)
 }
-
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
+console.log(CemberinAlani(15,pi))
+
 
 /* 	GÖREV 3:
 	- Sayfanın en üstünde global değişken olarak tanımlanmış bir sayilar dizisi bulunmaktadır. Bu dizi içinde 0 ile 1000 arasında rasgele oluşturulmuş tam sayılar ve ondalıklı sayılar bulunmaktadır. Bu diziyi kullanarak aşağıdakileri uygulayın:
@@ -98,16 +102,37 @@ let ucetambolunenler,
   tekraredensayilar;
 
 // 3a çözümü
+let enKucuk = sayilar[0]
+let enBuyuk = sayilar[0] ;
 
-/* kodlar buraya */
+
+for (let i = 0; i < sayilar.length; i++) {
+  if (enBuyuk < sayilar[i]) {
+    enBuyuk = sayilar[i];
+  }
+  if(enKucuk > sayilar[i]) {
+    enKucuk = sayilar[i];
+  }
+}
+console.log(enKucuk);
+console.log(enBuyuk);
+
 
 // 3b çözümü:
 
-/* kodlar buraya */
+let uceTamBolunenler = [];
+sayilar.forEach(sayi => {
+  if (sayi % 3 === 0) {
+    uceTamBolunenler.push(sayi);
+  }
+});
+console.log(uceTamBolunenler);
+
 
 // 3c çözümü:
 
-/* kodlar buraya */
+let uceBolunenlerinToplami = uceTamBolunenler.reduce((toplam, sayi) => toplam + sayi, 0);
+console.log(uceBolunenlerinToplami);
 
 // 3d çözümü
 
