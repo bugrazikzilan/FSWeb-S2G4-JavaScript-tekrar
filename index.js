@@ -136,13 +136,30 @@ console.log(uceBolunenlerinToplami);
 
 // 3d çözümü
 
-/* kodlar buraya */
+let besYuzdenKucukSayilar = sayilar.filter(sayi => sayi < 500);
+console.log(besYuzdenKucukSayilar);
 
 // 3e çözümü
 
-/* kodlar buraya */
+let siraliSayilar = besYuzdenKucukSayilar.sort((a,b) => a-b);
+console.log(siraliSayilar);
+
 
 // 3f çözümü
+let tekrarEdenSayilar = [];
+let tekrarSayilari = {};
+
+sayilar.forEach(sayi => {
+  tekrarSayilari[sayi] = (tekrarSayilari[sayi] || 0) + 1;
+});
+
+for (let sayi in tekrarSayilari) {
+  if (tekrarSayilari[sayi] > 1 ) {
+    let tekrarString = `${sayi} sayısı ${tekrarSayilari[sayi]} kere tekrar edilmiştir`;
+    tekrarEdenSayilar.push(tekrarString);
+  }
+}
+console.log(tekrarEdenSayilar);
 
 /* kodlar buraya */
 
